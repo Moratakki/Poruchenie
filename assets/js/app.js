@@ -1,4 +1,3 @@
-/* Поручение — логика двух страниц на vanilla JS + Bootstrap 5 */
 (function () {
   "use strict";
 
