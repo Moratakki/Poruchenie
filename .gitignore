@@ -9,5 +9,5 @@ desktop.ini
 *.log
 *.tmp
 
-# dependencies (проект статический, зависимостей нет)
+# dependencies
 node_modules/
