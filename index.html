@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поручение — сервис мелких услуг</title>
+  <meta name="description" content="Поручение — сервис для размещения заказов на мелкие бытовые услуги. Найдите проверенного исполнителя за 18 минут.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body data-page="home">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="brand-mark"><i class="bi bi-check-lg"></i></span> поручение<span class="text-brand">.</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Меню"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="orders.html">Заказы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+          <li class="nav-item"><a class="nav-link" href="#help">Помощь</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="orders.html?create=1">Разместить заказ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="badge badge-soft mb-3"><i class="bi bi-geo-alt me-1"></i>Донецк · мелкие поручения</span>
+            <h1>Мелкие дела<br>не должны <span class="text-brand">ждать.</span></h1>
+            <p class="lead mt-3">Опишите задачу — проверенные исполнители откликнутся в среднем за 18 минут. Ремонт, уборка, курьер, компьютерная помощь и не только.</p>
+            <form class="row g-2 mt-4" action="orders.html" method="get">
+              <div class="col-8 col-sm-9">
+                <label class="visually-hidden" for="heroSearch">Что нужно сделать</label>
+                <input class="form-control form-control-lg" id="heroSearch" name="q" placeholder="Что нужно сделать? Например, собрать шкаф">
+              </div>
+              <div class="col-4 col-sm-3"><button class="btn btn-primary btn-lg w-100" type="submit">Найти</button></div>
+            </form>
+            <div class="row row-cols-2 row-cols-sm-4 g-2 mt-4">
+              <div class="col"><div class="stat-number">12 480</div><div class="stat-label">исполнителей</div></div>
+              <div class="col"><div class="stat-number">38 200</div><div class="stat-label">поручений</div></div>
+              <div class="col"><div class="stat-number">4,9</div><div class="stat-label">средний рейтинг</div></div>
+              <div class="col"><div class="stat-number">18 мин</div><div class="stat-label">первый отклик</div></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-card">
+              <div class="hero-card-header d-flex justify-content-between"><span><i class="bi bi-broadcast me-2"></i>Новые поручения</span><span class="text-white-50">сегодня · 14</span></div>
+              <div class="hero-order"><span class="hero-order-icon"><i class="bi bi-tools"></i></span><div class="flex-grow-1"><div class="hero-order-title">Собрать шкаф ПАКС</div><div class="hero-order-meta">Ворошиловский · сегодня 18:00</div></div><div class="text-end"><div class="fw-bold small">1 800 ₽</div><div class="hero-order-meta">5 откл.</div></div></div>
+              <div class="hero-order"><span class="hero-order-icon"><i class="bi bi-brush"></i></span><div class="flex-grow-1"><div class="hero-order-title">Помыть окна в квартире</div><div class="hero-order-meta">Калининский · 12 ноября</div></div><div class="text-end"><div class="fw-bold small">2 500 ₽</div><div class="hero-order-meta">3 откл.</div></div></div>
+              <div class="hero-order"><span class="hero-order-icon"><i class="bi bi-truck"></i></span><div class="flex-grow-1"><div class="hero-order-title">Доставить документы</div><div class="hero-order-meta">Центр · сегодня 15:30</div></div><div class="text-end"><div class="fw-bold small">450 ₽</div><div class="hero-order-meta">8 откл.</div></div></div>
+              <div class="hero-order"><span class="hero-order-icon"><i class="bi bi-heart"></i></span><div class="flex-grow-1"><div class="hero-order-title">Выгулять корги</div><div class="hero-order-meta">Ворошиловский · сегодня 13:00</div></div><div class="text-end"><div class="fw-bold small">350 ₽</div><div class="hero-order-meta">6 откл.</div></div></div>
+              <div class="p-3 bg-light small text-secondary"><i class="bi bi-shield-check me-1 text-success"></i>Безопасная сделка: оплата после подтверждения работы</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+          <div><h2 class="section-title h3 mb-1">Любое мелкое дело</h2><p class="section-sub mb-0">Восемь направлений, в которых уже работают проверенные исполнители.</p></div>
+          <a class="btn btn-outline-primary btn-sm" href="orders.html">Все заказы <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-3" id="categoriesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section bg-white border-top border-bottom" id="how">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="section-title h3">Как это работает</h2>
+            <p class="section-sub">Заказчик описывает задачу и получает отклики. Исполнитель выбирает удобные заказы и зарабатывает на своих навыках.</p>
+            <div class="alert alert-primary border-0 small mb-0"><i class="bi bi-info-circle me-1"></i>Для заказчика публикация бесплатна. Комиссия 12% платится исполнителем после выполнения.</div>
+          </div>
+          <div class="col-lg-7">
+            <div class="d-flex gap-3 mb-3"><span class="step-number">1</span><div><h3 class="h6 fw-bold mb-1">Опишите поручение</h3><p class="small text-secondary mb-0">Категория, описание, район, бюджет и удобное время. Около двух минут.</p></div></div>
+            <div class="d-flex gap-3 mb-3"><span class="step-number">2</span><div><h3 class="h6 fw-bold mb-1">Сравните отклики</h3><p class="small text-secondary mb-0">Цена, срок, рейтинг, отзывы и бейдж проверки — всё в одном месте.</p></div></div>
+            <div class="d-flex gap-3"><span class="step-number">3</span><div><h3 class="h6 fw-bold mb-1">Примите работу</h3><p class="small text-secondary mb-0">Подтвердите выполнение — только после этого исполнитель получит оплату.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="calculator">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="section-title h3">Соберите смету за 30 секунд</h2>
+            <p class="section-sub">Предварительная оценка помогает понять порядок цен. Финальную стоимость исполнитель подтверждает в отклике.</p>
+            <ul class="list-unstyled small text-secondary">
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Без регистрации и звонков</li>
+              <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Учитываем объём и срочность</li>
+              <li><i class="bi bi-check2 text-success me-2"></i>Более 40 типовых задач</li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="card border-0 shadow-sm"><div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label small" for="calcCategory">Категория</label><select class="form-select" id="calcCategory"></select></div>
+                <div class="col-md-3"><label class="form-label small" for="calcVolume">Объём</label><select class="form-select" id="calcVolume"><option value="1">Небольшой</option><option value="1.35">Средний</option><option value="1.8">Большой</option></select></div>
+                <div class="col-md-3"><label class="form-label small" for="calcUrgency">Срочность</label><select class="form-select" id="calcUrgency"><option value="today">Сегодня</option><option value="soon" selected>На неделе</option><option value="flex">Гибко</option></select></div>
+              </div>
+              <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 border-top mt-4 pt-3">
+                <div><div class="small text-secondary">Ориентировочная стоимость</div><div class="fs-3 fw-bold" id="calcPrice">—</div></div>
+                <a class="btn btn-primary" id="calcCta" href="orders.html?create=1">Создать заказ <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-white border-top border-bottom" id="latest">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-4">
+          <div><h2 class="section-title h3 mb-1">Свежие поручения</h2><p class="section-sub mb-0">Реальные задачи, которые ждут исполнителей прямо сейчас.</p></div>
+          <a class="btn btn-outline-primary btn-sm" href="orders.html">Смотреть все <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-3" id="homeOrders"></div>
+      </div>
+    </section>
+
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-md-3"><div class="bg-white border rounded-4 p-3 h-100"><span class="trust-icon"><i class="bi bi-patch-check"></i></span><h3 class="h6 fw-bold mt-3">Проверенные исполнители</h3><p class="small text-secondary mb-0">Документы, телефон и история аккаунта. Бейдж «Проверен» — ручная модерация.</p></div></div>
+          <div class="col-md-3"><div class="bg-white border rounded-4 p-3 h-100"><span class="trust-icon"><i class="bi bi-lock"></i></span><h3 class="h6 fw-bold mt-3">Безопасная оплата</h3><p class="small text-secondary mb-0">Деньги резервируются до подтверждения работы. Споры разбирает поддержка.</p></div></div>
+          <div class="col-md-3"><div class="bg-white border rounded-4 p-3 h-100"><span class="trust-icon"><i class="bi bi-clock-history"></i></span><h3 class="h6 fw-bold mt-3">Ответ за 18 минут</h3><p class="small text-secondary mb-0">Живая лента и уведомления. Не нужно ждать до завтра, чтобы найти мастера.</p></div></div>
+          <div class="col-md-3"><div class="bg-white border rounded-4 p-3 h-100"><span class="trust-icon"><i class="bi bi-hand-thumbs-up"></i></span><h3 class="h6 fw-bold mt-3">Честные правила</h3><p class="small text-secondary mb-0">Заказчику бесплатно, исполнителю — понятная комиссия 12%.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="market-band">
+          <div class="row g-4 align-items-end">
+            <div class="col-lg-7"><span class="badge text-bg-light mb-2">стартап · рынок</span><h2 class="display-6 mb-2">Рынок уже готов. Не хватает удобного входа.</h2><p class="text-secondary mb-0">Объём платных бытовых услуг в России — 17,9 трлн ₽ в 2024 году. Доля цифровых платформ — 21%, к 2026 году прогнозируется 28%. Мелкие задачи до сих пор решаются в чатах, без рейтинга и гарантий.</p></div>
+            <div class="col-lg-5"><div class="row g-2 text-center">
+              <div class="col-4"><div class="bg-white bg-opacity-10 rounded-3 p-3"><div class="fs-5 fw-bold">17,9</div><div class="small text-secondary">трлн ₽ рынок</div></div></div>
+              <div class="col-4"><div class="bg-white bg-opacity-10 rounded-3 p-3"><div class="fs-5 fw-bold">21%</div><div class="small text-secondary">цифровая доля</div></div></div>
+              <div class="col-4"><div class="bg-white bg-opacity-10 rounded-3 p-3"><div class="fs-5 fw-bold">28%</div><div class="small text-secondary">прогноз 2026</div></div></div>
+            </div></div>
+          </div>
+          <hr class="border-secondary my-4">
+          <div class="row g-4">
+            <div class="col-md-4"><h3 class="h6 fw-bold">Продукт</h3><p class="small text-secondary mb-0">Локальный маркетплейс коротких задач: заказчик публикует задачу, исполнители откликаются, платформа помогает выбрать и безопасно закрыть сделку.</p></div>
+            <div class="col-md-4"><h3 class="h6 fw-bold">Бизнес-модель</h3><p class="small text-secondary mb-0">Комиссия 12% с исполнителя, продвижение заказов 99–299 ₽, подписка мастера 490 ₽/мес. Заказчику — бесплатно.</p></div>
+            <div class="col-md-4"><h3 class="h6 fw-bold">Перспективы</h3><p class="small text-secondary mb-0">Бета в Донецке, платежи и PWA, затем Ростов-на-Дону и алгоритм подбора. Основа — проверенные локальные мастера.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="container">
+        <h2 class="section-title h3 mb-1">Команда проекта</h2>
+        <p class="section-sub mb-4">Три роли, три зоны ответственности. Работаем короткими спринтами и отвечаем за результат вместе.</p>
+        <div class="row g-3" id="teamGrid"></div>
+        <div class="row g-3 mt-3">
+          <div class="col-md-4"><div class="bg-white border rounded-3 p-3 small"><span class="text-secondary">Методология</span><div class="fw-semibold">Agile · недельные спринты</div></div></div>
+          <div class="col-md-4"><div class="bg-white border rounded-3 p-3 small"><span class="text-secondary">Стек</span><div class="fw-semibold">HTML5 · CSS3 · Bootstrap 5 · JS</div></div></div>
+          <div class="col-md-4"><div class="bg-white border rounded-3 p-3 small"><span class="text-secondary">Документация</span><div class="fw-semibold">ТЗ · ПЗ · ТП · ДП · ОТ</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="help">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-5"><h2 class="section-title h3">Частые вопросы</h2><p class="section-sub">Коротко о правилах, оплате и безопасности. Если ответа нет — напишите в поддержку.</p><a class="btn btn-outline-primary btn-sm" href="mailto:help@poruchenie.ru">Написать в поддержку</a></div>
+          <div class="col-lg-7"><div class="accordion" id="faqAccordion"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0">
+      <div class="container">
+        <div class="p-4 p-md-5 bg-primary text-white rounded-4">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-8"><h2 class="h3 fw-bold mb-2">Не откладывайте мелкие дела на потом.</h2><p class="mb-0 text-white-50">Разместите поручение бесплатно — исполнители откликнутся в среднем за 18 минут.</p></div>
+            <div class="col-lg-4 text-lg-end"><a class="btn btn-light btn-lg" href="orders.html?create=1">Разместить заказ <i class="bi bi-arrow-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5"><a class="navbar-brand d-inline-flex align-items-center text-white" href="index.html"><span class="brand-mark"><i class="bi bi-check-lg"></i></span> поручение<span class="text-white">.</span></a><p class="small mt-3 mb-0">Сервис нового поколения для размещения заказов на мелкие услуги. Донецк, 2026. Курсовой проект команды ПИУКИС-23.</p></div>
+        <div class="col-6 col-lg-2"><h6>Сервис</h6><ul class="list-unstyled small mb-0"><li><a href="orders.html">Заказы</a></li><li><a href="orders.html?create=1">Разместить заказ</a></li></ul></div>
+        <div class="col-6 col-lg-2"><h6>Проект</h6><ul class="list-unstyled small mb-0"><li><a href="#about">О проекте</a></li><li><a href="#team">Команда</a></li><li><a href="https://github.com/Moratakki/Poruchenie" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+        <div class="col-lg-3"><h6>Контакты</h6><ul class="list-unstyled small mb-0"><li><i class="bi bi-telephone me-2"></i>+7 (949) 123-45-67</li><li><i class="bi bi-envelope me-2"></i>hello@poruchenie.ru</li><li><i class="bi bi-geo-alt me-2"></i>Донецк, ул. Артёма, 74</li></ul></div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-wrap justify-content-between gap-2 small"><span>© 2026 «Поручение». Учебный прототип.</span><span>Bootstrap 5.3.8 · HTML5 · CSS3 · JavaScript</span></div>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
