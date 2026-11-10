@@ -1,6 +1,6 @@
 # Поручение
 
-**Сервис для размещения заказов на мелкие услуги** — упрощённый учебный прототип на Bootstrap 5.3.8 без jQuery. Курсовой проект команды ПИУКИС-23.
+**Сервис для размещения заказов на мелкие услуги** — прототип на Bootstrap 5.3.8. Курсовой проект команды ПИУКИС-23.
 
 **Демо:** [moratakki.github.io/Poruchenie](https://moratakki.github.io/Poruchenie/)  
 **Репозиторий:** [github.com/Moratakki/Poruchenie](https://github.com/Moratakki/Poruchenie)
@@ -13,9 +13,9 @@
 ## Стек
 
 - HTML5 + CSS3;
-- **Bootstrap 5.3.8** (CSS и bundle JS, локально);
+- **Bootstrap 5.3.8**;
 - Bootstrap Icons 1.13.2;
-- **чистый JavaScript** (без jQuery);
+- **чистый JavaScript**;
 - localStorage для демо-данных.
 
 ## Запуск
