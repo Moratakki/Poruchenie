@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заказы — Поручение</title>
+  <meta name="description" content="Лента заказов на мелкие услуги в Донецке: фильтры по категории, району и бюджету, отклики исполнителей.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body data-page="orders">
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html"><span class="brand-mark"><i class="bi bi-check-lg"></i></span> поручение<span class="text-brand">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Меню"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link active" href="orders.html">Заказы</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">О проекте</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#help">Помощь</a></li>
+        </ul>
+        <a class="btn btn-primary btn-sm" href="orders.html?create=1">Разместить заказ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-4 py-lg-5">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div>
+          <h1 class="h2 fw-bold mb-1">Заказы</h1>
+          <p class="text-secondary mb-0">Живые задачи от заказчиков Донецка. Выберите категорию, район и бюджет.</p>
+        </div>
+        <button class="btn btn-primary" id="createOrderBtn"><i class="bi bi-plus-lg me-1"></i>Создать заказ</button>
+      </div>
+
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+          <div class="row g-2 align-items-end">
+            <div class="col-lg-4"><label class="form-label small" for="searchInput">Поиск</label><input class="form-control" id="searchInput" placeholder="Шкаф, окна, ноутбук…"></div>
+            <div class="col-6 col-lg-2"><label class="form-label small" for="categoryFilter">Категория</label><select class="form-select" id="categoryFilter"></select></div>
+            <div class="col-6 col-lg-2"><label class="form-label small" for="districtFilter">Район</label><select class="form-select" id="districtFilter"></select></div>
+            <div class="col-6 col-lg-2"><label class="form-label small" for="budgetFilter">Бюджет до, ₽</label><input class="form-control" id="budgetFilter" type="number" min="0" step="100" placeholder="5 000"></div>
+            <div class="col-6 col-lg-2"><label class="form-label small" for="sortSelect">Сортировка</label><select class="form-select" id="sortSelect"><option value="new">Сначала новые</option><option value="budget">Бюджет</option><option value="responses">Больше откликов</option></select></div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="small text-secondary">Найдено: <span id="ordersCount">0</span></span>
+            <button class="btn btn-sm btn-link text-decoration-none" id="resetFilters">Сбросить фильтры</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3" id="ordersGrid"></div>
+    </div>
+  </main>
+
+  <div class="modal fade" id="createOrderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <form id="createOrderForm" class="needs-validation" novalidate>
+          <div class="modal-header"><h2 class="modal-title h5">Новый заказ</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="createCategory">Категория</label><select class="form-select" id="createCategory" name="category" required></select><div class="invalid-feedback">Выберите категорию.</div></div>
+              <div class="col-md-6"><label class="form-label" for="createBudget">Бюджет, ₽</label><input class="form-control" id="createBudget" name="budget" type="number" min="100" step="50" placeholder="1 800" required><div class="invalid-feedback">Укажите бюджет не меньше 100 ₽.</div></div>
+              <div class="col-12"><label class="form-label" for="createTitle">Коротко о задаче</label><input class="form-control" id="createTitle" name="title" minlength="10" maxlength="90" placeholder="Собрать шкаф ПАКС в спальне" required><div class="invalid-feedback">Минимум 10 символов.</div></div>
+              <div class="col-12"><label class="form-label" for="createDesc">Подробности</label><textarea class="form-control" id="createDesc" name="desc" rows="4" minlength="30" maxlength="600" placeholder="Что нужно сделать, какие есть материалы и инструменты, особенности доступа." required></textarea><div class="invalid-feedback">Опишите задачу минимум в 30 символах.</div></div>
+              <div class="col-md-4"><label class="form-label" for="createDistrict">Район</label><select class="form-select" id="createDistrict" name="district" required></select></div>
+              <div class="col-md-4"><label class="form-label" for="createDate">Дата</label><input class="form-control" id="createDate" name="date" type="date" required></div>
+              <div class="col-md-4"><label class="form-label" for="createUrgency">Срочность</label><select class="form-select" id="createUrgency" name="urgency"><option value="today">Сегодня</option><option value="soon" selected>На этой неделе</option><option value="flex">Гибкие даты</option></select></div>
+              <div class="col-12"><div class="form-check"><input class="form-check-input" type="checkbox" id="createRemote" name="remote"><label class="form-check-label" for="createRemote">Удалённая работа — задачу можно выполнить без выезда</label></div></div>
+              <div class="col-md-6"><label class="form-label" for="customerName">Ваше имя</label><input class="form-control" id="customerName" name="customerName" minlength="2" placeholder="Анна Смирнова" required><div class="invalid-feedback">Укажите имя.</div></div>
+              <div class="col-md-6"><label class="form-label" for="customerPhone">Телефон</label><input class="form-control" id="customerPhone" name="customerPhone" type="tel" placeholder="+7 (___) ___-__-__" required><div class="invalid-feedback">Укажите телефон.</div></div>
+              <div class="col-12"><div class="alert alert-light border small mb-0"><i class="bi bi-info-circle me-1"></i>Публикация бесплатна. Оплата исполнителю — после подтверждения работы. В прототипе платёж имитируется.</div></div>
+            </div>
+          </div>
+          <div class="modal-footer"><button class="btn btn-outline-secondary" type="button" data-bs-dismiss="modal">Отмена</button><button class="btn btn-primary" type="submit">Опубликовать</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header"><h2 class="modal-title h5">Заказ</h2><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Закрыть"></button></div>
+        <div class="modal-body" id="orderModalBody"></div>
+        <div class="modal-footer" id="orderModalFooter"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-between gap-2 small"><span>© 2026 «Поручение». Учебный прототип.</span><span><a href="index.html">Главная</a> · <a href="orders.html">Заказы</a> · <a href="https://github.com/Moratakki/Poruchenie" target="_blank" rel="noopener">GitHub</a></span></div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
