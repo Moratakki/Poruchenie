@@ -1,4 +1,3 @@
-/* Поручение — демонстрационные данные (2 страницы, Bootstrap 5, без авторизации) */
 window.PORUCHENIE = (function () {
   "use strict";
 
