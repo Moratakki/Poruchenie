@@ -18,14 +18,6 @@
 - **чистый JavaScript**;
 - localStorage для демо-данных.
 
-## Запуск
-
-```bash
-python -m http.server 8000
-```
-
-Открыть `http://127.0.0.1:8000`.
-
 ## Структура
 
 ```text
